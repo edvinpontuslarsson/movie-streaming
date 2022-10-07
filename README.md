@@ -1,7 +1,5 @@
 # movie-streaming
 
-## This <span>ASP.NET</span> version is still in progress
-
 ## Table of contents
 
 - [Instructions](#instructions)
