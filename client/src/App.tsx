@@ -1,9 +1,7 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function App() {
-  const [initialized, setInitialized] = useState(false);
-
   useEffect(() => {
     // TODO
     // "In development, you will see two fetches in the Network tab. There is nothing wrong with that."
