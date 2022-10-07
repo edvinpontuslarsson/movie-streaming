@@ -1,3 +1,4 @@
+import { getTrendingMovies } from './api/api';
 import './App.css';
 
 function App() {
@@ -16,11 +17,12 @@ function App() {
       <div className="button-wrap">
         <button
           className="fetch-button"
-          onClick={() => {
-            console.log(process.env.REACT_APP_MOVIEDB_API_KEY);
+          onClick={async () => {
+            const trendingMovies = await getTrendingMovies();
+            console.log(trendingMovies);
           }}
         >
-          Fetch
+          Fetch trending movies
         </button>
       </div>
     </div>
