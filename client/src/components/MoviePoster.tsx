@@ -7,8 +7,6 @@ export default function MoviePoster({
   movie: ITrendingMovieItem;
   imgConfig: IImgConfig;
 }) {
-  // TODO src based on config and movie
-  // https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
   return (
     <div>
       <img

@@ -3,13 +3,13 @@ export interface IAPIConfig {
 }
 
 export interface IImgConfig {
-  backdrop_sizes: string[]; //  ['w300', 'w780', 'w1280', 'original'];
-  base_url: string; // 'http://image.tmdb.org/t/p/';
-  logo_sizes: string[]; // ['w45', 'w92', 'w154', 'w185', 'w300', 'w500', 'original'];
-  poster_sizes: string[]; // ['w92', 'w154', 'w185', 'w342', 'w500', 'w780', 'original'];
-  profile_sizes: string[]; // ['w45', 'w185', 'h632', 'original'];
-  secure_base_url: string; // 'https://image.tmdb.org/t/p/';
-  still_sizes: string[]; // ['w92', 'w185', 'w300', 'original'];
+  backdrop_sizes: string[];
+  base_url: string;
+  logo_sizes: string[];
+  poster_sizes: string[];
+  profile_sizes: string[];
+  secure_base_url: string;
+  still_sizes: string[];
 }
 
 export interface ITrendingMovies {
