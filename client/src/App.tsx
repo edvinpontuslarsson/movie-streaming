@@ -1,10 +1,11 @@
 import { getAPIConfig, getTrendingMovies } from './api/api';
 import './App.css';
 import { useState } from 'react';
-import { ITrendingMovieItem } from './interfaces/apiData';
+import { IImgConfig, ITrendingMovieItem } from './interfaces/apiData';
 import MoviePoster from './components/MoviePoster';
 
 function App() {
+  const [imgConfig, setImgConfig] = useState<null | IImgConfig>(null);
   const [trendingMovieItems, setTrendingMovieItems] = useState(
     [] as ITrendingMovieItem[]
   );
@@ -19,6 +20,8 @@ function App() {
             // console.log(config);
 
             if (config) {
+              setImgConfig(config.images);
+
               const trendingMovies = await getTrendingMovies();
               //console.log(trendingMovies.results);
               setTrendingMovieItems(trendingMovies.results);
@@ -29,9 +32,10 @@ function App() {
         </button>
       </div>
       <div>
-        {trendingMovieItems.map((item) => (
-          <MoviePoster movie={item} />
-        ))}
+        {imgConfig &&
+          trendingMovieItems.map((item) => (
+            <MoviePoster imgConfig={imgConfig} movie={item} />
+          ))}
       </div>
     </div>
   );
