@@ -12,7 +12,7 @@ export default function MoviePoster({
   return (
     <div>
       <img
-        src={`${imgConfig.secure_base_url}w500/${movie.poster_path}`}
+        src={`${imgConfig.secure_base_url}${imgConfig.poster_sizes[1]}/${movie.poster_path}`}
         alt={`Poster for movie ${movie.title}`}
       />
       <p>{movie.title}</p>
