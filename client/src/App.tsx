@@ -19,7 +19,7 @@ function App() {
           className="fetch-button"
           onClick={async () => {
             const trendingMovies = await getTrendingMovies();
-            console.log(trendingMovies);
+            console.log(trendingMovies.results);
           }}
         >
           Fetch trending movies
