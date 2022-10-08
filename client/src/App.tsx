@@ -2,7 +2,7 @@ import './App.css';
 import { getAPIConfig, getTrendingMovies } from './api/api';
 import { useState } from 'react';
 import { IImgConfig, ITrendingMovieItem } from './interfaces/apiData';
-import MoviePoster from './components/MoviePoster';
+import MovieList from './components/MovieList';
 
 function App() {
   const [imgConfig, setImgConfig] = useState<null | IImgConfig>(null);
@@ -30,10 +30,9 @@ function App() {
         </button>
       </div>
 
-      {imgConfig &&
-        trendingMovieItems.map((item) => (
-          <MoviePoster imgConfig={imgConfig} movie={item} />
-        ))}
+      {imgConfig && (
+        <MovieList movies={trendingMovieItems} imgConfig={imgConfig} />
+      )}
     </div>
   );
 }
