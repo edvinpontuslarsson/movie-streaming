@@ -8,7 +8,7 @@ export default function MoviePoster({
   imgConfig: IImgConfig;
 }) {
   return (
-    <a href='#'>
+    <a href='#!'>
       <img
         src={`${imgConfig.secure_base_url}${imgConfig.poster_sizes[1]}/${movie.poster_path}`}
         alt={`Poster for movie ${movie.title}`}
