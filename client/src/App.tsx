@@ -10,15 +10,6 @@ function App() {
     [] as ITrendingMovieItem[]
   );
 
-  const slickSliderSettings = {
-    className: '',
-    dots: true,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    adaptiveHeight: true,
-  };
-
   return (
     <div className="App">
       <div className="button-wrap">
