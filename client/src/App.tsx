@@ -17,13 +17,11 @@ function App() {
           className="fetch-button"
           onClick={async () => {
             const config = await getAPIConfig();
-            // console.log(config);
 
             if (config) {
               setImgConfig(config.images);
 
               const trendingMovies = await getTrendingMovies();
-              //console.log(trendingMovies.results);
               setTrendingMovieItems(trendingMovies.results);
             }
           }}
