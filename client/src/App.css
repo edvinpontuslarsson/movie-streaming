@@ -20,3 +20,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.movie-list-scroll-button-wrap {
+  width: 10%;
+}

@@ -13,7 +13,7 @@ export default function MovieList({
 
   return (
     <div className="movie-section">
-      <div>
+      <div className='movie-list-scroll-button-wrap'>
         {chunkIndex > 0 && (
           <button
             onClick={() => {
@@ -31,7 +31,7 @@ export default function MovieList({
             <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
           ))}
       </div>
-      <div>
+      <div className='movie-list-scroll-button-wrap'>
         {chunkIndex !== movieListChunks.length - 1 && (
           <button
             onClick={() => {
