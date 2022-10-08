@@ -1,12 +1,8 @@
 import './App.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
 import { getAPIConfig, getTrendingMovies } from './api/api';
 import { useState } from 'react';
 import { IImgConfig, ITrendingMovieItem } from './interfaces/apiData';
 import MoviePoster from './components/MoviePoster';
-import Slider from 'react-slick';
 
 function App() {
   const [imgConfig, setImgConfig] = useState<null | IImgConfig>(null);
@@ -43,13 +39,10 @@ function App() {
         </button>
       </div>
 
-      {imgConfig && (
-        <Slider {...slickSliderSettings}>
-          {trendingMovieItems.map((item) => (
-            <MoviePoster imgConfig={imgConfig} movie={item} />
-          ))}
-        </Slider>
-      )}
+      {imgConfig &&
+        trendingMovieItems.map((item) => (
+          <MoviePoster imgConfig={imgConfig} movie={item} />
+        ))}
     </div>
   );
 }
