@@ -3,6 +3,7 @@ import { getAPIConfig, getTrendingMovies } from './api/api';
 import { useState } from 'react';
 import { IImgConfig, ITrendingMovieItem } from './interfaces/apiData';
 import MovieList from './components/MovieList';
+import { chunkArray } from './utils/utils';
 
 function App() {
   const [imgConfig, setImgConfig] = useState<null | IImgConfig>(null);
@@ -31,7 +32,10 @@ function App() {
       </div>
 
       {imgConfig && (
-        <MovieList movies={trendingMovieItems} imgConfig={imgConfig} />
+        <MovieList
+          movieListChunks={chunkArray(3, trendingMovieItems)}
+          imgConfig={imgConfig}
+        />
       )}
     </div>
   );

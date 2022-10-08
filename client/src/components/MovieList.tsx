@@ -1,38 +1,24 @@
+import { useState } from 'react';
 import { IImgConfig, ITrendingMovieItem } from '../interfaces/apiData';
 import MoviePoster from './MoviePoster';
 
 export default function MovieList({
-  movies,
+  movieListChunks,
   imgConfig,
 }: {
-  movies: ITrendingMovieItem[];
+  movieListChunks: ITrendingMovieItem[][];
   imgConfig: IImgConfig;
 }) {
-  /**
-   * This function reuses code from this StackOverflow answer:
-   * https://stackoverflow.com/a/37826698/9374593
-   */
-  const chunkArray = (itemsPerChunk: number, inputArray: any[]) => {
-    const result = inputArray.reduce((resultArray, item, index) => {
-      const chunkIndex = Math.floor(index / itemsPerChunk);
+  const [chunkIndex, setChunkIndex] = useState(0);
 
-      if (!resultArray[chunkIndex]) {
-        resultArray[chunkIndex] = []; // start a new chunk
-      }
-
-      resultArray[chunkIndex].push(item);
-
-      return resultArray;
-    }, []);
-
-    return result;
-  };
+  console.log(movieListChunks);
 
   return (
     <>
-      {movies.map((item) => (
-        <MoviePoster imgConfig={imgConfig} movie={item} />
-      ))}
+      {movieListChunks.length > 0 &&
+        movieListChunks[chunkIndex].map((item) => (
+          <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
+        ))}
     </>
   );
 }
