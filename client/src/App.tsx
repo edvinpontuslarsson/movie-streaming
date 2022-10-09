@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Typography
         variant="h4"
-        style={{ marginLeft: 68, marginTop: 20, marginBottom: 10 }}
+        style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}
       >
         Trending Movies
       </Typography>
