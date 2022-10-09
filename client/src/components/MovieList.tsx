@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { IconButton } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
-import { IImgConfig, ITrendingMovieItem } from '../interfaces/apiData';
+import { IImgConfig, ITrendingMediaItem } from '../interfaces/apiData';
 import MoviePoster from './MoviePoster';
 
 export default function MovieList({
   movieListChunks,
   imgConfig,
 }: {
-  movieListChunks: ITrendingMovieItem[][];
+  movieListChunks: ITrendingMediaItem[][];
   imgConfig: IImgConfig;
 }) {
   const [chunkIndex, setChunkIndex] = useState(0);

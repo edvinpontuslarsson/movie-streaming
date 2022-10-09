@@ -1,9 +1,9 @@
-import { ITrendingMovieItem } from '../interfaces/apiData';
+import { ITrendingMediaItem } from '../interfaces/apiData';
 
 export const chunkArray = (
   itemsPerChunk: number,
-  items: ITrendingMovieItem[]
-): ITrendingMovieItem[][] => {
+  items: ITrendingMediaItem[]
+): ITrendingMediaItem[][] => {
   const chunks = [];
 
   for (let i = 0; i < items.length; i += itemsPerChunk) {
