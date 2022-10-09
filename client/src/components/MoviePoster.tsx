@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import { useState } from 'react';
 import { ITrendingMovieItem, IImgConfig } from '../interfaces/apiData';
 
@@ -30,7 +31,7 @@ export default function MoviePoster({
         />
         {true && (
           <div className='movie-poster-more-info'>
-            <p className="movie-poster-link-text">{movie.title}</p>
+            <Typography className="movie-poster-link-text">{movie.title}</Typography>
           </div>
         )}
       </a>
