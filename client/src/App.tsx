@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Typography variant="h3" style={{ textAlign: 'center', margin: '3rem' }}>
+      <Typography variant="h4" style={{ textAlign: 'center', margin: 20 }}>
         Trending Movies
       </Typography>
       {imgConfig && (
