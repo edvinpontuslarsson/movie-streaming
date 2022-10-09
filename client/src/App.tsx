@@ -26,7 +26,7 @@ function App() {
             Trending Movies
           </Typography>
           <MovieList
-            movieListChunks={chunkArray(5, trendingMovies)}
+            movieListChunks={chunkArray(4, trendingMovies)}
             imgConfig={imgConfig}
           />
 
@@ -37,7 +37,7 @@ function App() {
             Trending TV
           </Typography>
           <MovieList
-            movieListChunks={chunkArray(5, trendingTvShows)}
+            movieListChunks={chunkArray(4, trendingTvShows)}
             imgConfig={imgConfig}
           />
         </>
@@ -47,23 +47,25 @@ function App() {
         <button
           className="fetch-button"
           onClick={async () => {
-            const config = await getAPIConfig();
+            try {
+              const config = await getAPIConfig();
 
-            if (config) {
-              setImgConfig(config.images);
+              if (config) {
+                setImgConfig(config.images);
 
-              const trendingMedia = await getTrendingMediaItems();
+                const trendingMedia = await getTrendingMediaItems();
 
-              const movies = trendingMedia.results.filter(
-                (media) => media.media_type === 'movie'
-              );
-              setTrendingMovies(movies);
+                const movies = trendingMedia.results.filter(
+                  (media) => media.media_type === 'movie'
+                );
+                setTrendingMovies(movies);
 
-              const tvShows = trendingMedia.results.filter(
-                (media) => media.media_type === 'tv'
-              );
-              setTrendingTvShows(tvShows);
-            }
+                const tvShows = trendingMedia.results.filter(
+                  (media) => media.media_type === 'tv'
+                );
+                setTrendingTvShows(tvShows);
+              }
+            } catch (error) {}
           }}
         >
           Fetch trending movies
