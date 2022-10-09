@@ -1,6 +1,6 @@
 import './App.css';
 import { getAPIConfig, getTrendingMediaItems } from './api/api';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IImgConfig, ITrendingMediaItem } from './interfaces/apiData';
 import MovieList from './components/MovieList';
 import { chunkArray } from './utils/utils';
@@ -14,6 +14,34 @@ function App() {
   const [trendingTvShows, setTrendingTvShows] = useState(
     [] as ITrendingMediaItem[]
   );
+
+  useEffect(() => {
+    async function handleAPIFetch() {
+      console.log('here')
+
+      try {
+        const config = await getAPIConfig();
+
+        if (config) {
+          setImgConfig(config.images);
+
+          const trendingMedia = await getTrendingMediaItems();
+
+          const movies = trendingMedia.results.filter(
+            (media) => media.media_type === 'movie'
+          );
+          setTrendingMovies(movies);
+
+          const tvShows = trendingMedia.results.filter(
+            (media) => media.media_type === 'tv'
+          );
+          setTrendingTvShows(tvShows);
+        }
+      } catch (error) {}
+    }
+
+    handleAPIFetch();
+  }, []);
 
   return (
     <div className="App">
@@ -42,35 +70,6 @@ function App() {
           />
         </>
       )}
-
-      <div className="button-wrap">
-        <button
-          className="fetch-button"
-          onClick={async () => {
-            try {
-              const config = await getAPIConfig();
-
-              if (config) {
-                setImgConfig(config.images);
-
-                const trendingMedia = await getTrendingMediaItems();
-
-                const movies = trendingMedia.results.filter(
-                  (media) => media.media_type === 'movie'
-                );
-                setTrendingMovies(movies);
-
-                const tvShows = trendingMedia.results.filter(
-                  (media) => media.media_type === 'tv'
-                );
-                setTrendingTvShows(tvShows);
-              }
-            } catch (error) {}
-          }}
-        >
-          Fetch trending movies
-        </button>
-      </div>
     </div>
   );
 }
