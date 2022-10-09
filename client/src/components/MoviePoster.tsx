@@ -28,7 +28,11 @@ export default function MoviePoster({
           src={`${imgConfig.secure_base_url}${imgConfig.poster_sizes[1]}/${movie.poster_path}`}
           alt={`Poster for movie ${movie.title}`}
         />
-        {onHover && <p className="movie-poster-link-text">{movie.title}</p>}
+        {true && (
+          <div className='movie-poster-more-info'>
+            <p className="movie-poster-link-text">{movie.title}</p>
+          </div>
+        )}
       </a>
     </div>
   );
