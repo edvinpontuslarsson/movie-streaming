@@ -28,12 +28,10 @@ export default function MovieList({
           </IconButton>
         )}
       </div>
-      {/* <div className="movie-list"> */}
-        {movieListChunks.length > 0 &&
-          movieListChunks[chunkIndex].map((item) => (
-            <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
-          ))}
-      {/* </div> */}
+      {movieListChunks.length > 0 &&
+        movieListChunks[chunkIndex].map((item) => (
+          <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
+        ))}
       <div className="movie-list-scroll-button-wrap">
         {chunkIndex !== movieListChunks.length - 1 && (
           <IconButton
