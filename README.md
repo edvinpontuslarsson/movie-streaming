@@ -1,11 +1,5 @@
 # movie-streaming
 
-## Table of contents
-
-- [Instructions](#instructions)
-- [Solution Description](#solution-description)
-- [Tools used](#tools-used)
-
 ## Instructions
 
 ### Run with Docker
