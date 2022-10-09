@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
 import { ITrendingMovieItem, IImgConfig } from '../interfaces/apiData';
 
 export default function MoviePoster({
@@ -8,21 +10,20 @@ export default function MoviePoster({
   movie: ITrendingMovieItem;
   imgConfig: IImgConfig;
 }) {
-  const [onHover, setOnHover] = useState(false);
+  const stringInitialPosterSize = imgConfig.poster_sizes[1].split('w')[1];
+  const width = parseInt(stringInitialPosterSize);
 
   return (
-    <a
-      href="#!"
-      onMouseEnter={() => setOnHover(true)}
-      onFocus={() => setOnHover(true)}
-      onMouseLeave={() => setOnHover(false)}
-      onBlur={() => setOnHover(false)}
-    >
-      <img
-        src={`${imgConfig.secure_base_url}${imgConfig.poster_sizes[1]}/${movie.poster_path}`}
-        alt={`Poster for movie ${movie.title}`}
-      />
-      {onHover && <p style={{ color: 'white' }}>{movie.title}</p>}
-    </a>
+    <Card>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          width={width}
+          height={225}
+          image={`${imgConfig.secure_base_url}${imgConfig.poster_sizes[1]}/${movie.poster_path}`}
+          alt={`Poster for movie ${movie.title}`}
+        />
+      </CardActionArea>
+    </Card>
   );
 }

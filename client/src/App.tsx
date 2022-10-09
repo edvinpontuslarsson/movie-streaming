@@ -1,12 +1,10 @@
 import './App.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
 import { getAPIConfig, getTrendingMovies } from './api/api';
 import { useState } from 'react';
 import { IImgConfig, ITrendingMovieItem } from './interfaces/apiData';
-import MoviePoster from './components/MoviePoster';
-import Slider from 'react-slick';
+import MovieList from './components/MovieList';
+import { chunkArray } from './utils/utils';
+import { Typography } from '@mui/material';
 
 function App() {
   const [imgConfig, setImgConfig] = useState<null | IImgConfig>(null);
@@ -14,17 +12,21 @@ function App() {
     [] as ITrendingMovieItem[]
   );
 
-  const slickSliderSettings = {
-    className: '',
-    dots: true,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    adaptiveHeight: true,
-  };
-
   return (
     <div className="App">
+      <Typography
+        variant="h4"
+        style={{ marginLeft: 68, marginTop: 20, marginBottom: 10 }}
+      >
+        Trending Movies
+      </Typography>
+      {imgConfig && (
+        <MovieList
+          movieListChunks={chunkArray(5, trendingMovieItems)}
+          imgConfig={imgConfig}
+        />
+      )}
+
       <div className="button-wrap">
         <button
           className="fetch-button"
@@ -42,14 +44,6 @@ function App() {
           Fetch trending movies
         </button>
       </div>
-
-      {imgConfig && (
-        <Slider {...slickSliderSettings}>
-          {trendingMovieItems.map((item) => (
-            <MoviePoster imgConfig={imgConfig} movie={item} />
-          ))}
-        </Slider>
-      )}
     </div>
   );
 }
