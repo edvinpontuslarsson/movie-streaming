@@ -25,7 +25,11 @@
   width: 10%;
 }
 
-.movie-poster-link {
+.movie-poster-link-wrap {
+  overflow: hidden;
+}
+
+.movie-poster-link-text {
   color: white;
   text-decoration: underline;
   text-decoration-color: white;
