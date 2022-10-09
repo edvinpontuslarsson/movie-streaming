@@ -4,8 +4,6 @@ export const chunkArray = (
   itemsPerChunk: number,
   items: ITrendingMovieItem[]
 ): ITrendingMovieItem[][] => {
-  if (itemsPerChunk < 1) return [];
-
   const chunks = [];
 
   for (let i = 0; i < items.length; i += itemsPerChunk) {
