@@ -21,6 +21,11 @@
   justify-content: space-between;
 }
 
+.movie-list {
+  display: flex;
+  flex-direction: row;
+}
+
 .movie-list-scroll-button-wrap {
   width: 10%;
 }

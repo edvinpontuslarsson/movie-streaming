@@ -25,7 +25,7 @@ export default function MovieList({
           </button>
         )}
       </div>
-      <div>
+      <div className='movie-list'>
         {movieListChunks.length > 0 &&
           movieListChunks[chunkIndex].map((item) => (
             <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
