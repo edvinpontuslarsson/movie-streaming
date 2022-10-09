@@ -18,15 +18,11 @@
 .movie-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .movie-list-scroll-button-wrap {
   width: 10%;
-}
-
-.movie-poster-link-wrap {
-  overflow: hidden;
 }
 
 .movie-poster-link-text {
