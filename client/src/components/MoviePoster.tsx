@@ -10,9 +10,14 @@ export default function MoviePoster({
 }) {
   const [onHover, setOnHover] = useState(false);
 
+  const stringInitialPosterSize = imgConfig.poster_sizes[1].split('w')[1];
+
+  const width = parseInt(stringInitialPosterSize);
+
   return (
     <div
       className="movie-poster-link-wrap"
+      style={{ width }}
       onMouseEnter={() => setOnHover(true)}
       onFocus={() => setOnHover(true)}
       onMouseLeave={() => setOnHover(false)}

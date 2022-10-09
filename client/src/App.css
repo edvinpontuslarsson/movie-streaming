@@ -26,6 +26,10 @@
   flex-direction: row;
 }
 
+.movie-poster-link-wrap {
+  word-wrap: break-word;
+}
+
 .movie-list-scroll-button-wrap {
   width: 10%;
 }
