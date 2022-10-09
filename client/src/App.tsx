@@ -26,7 +26,7 @@ function App() {
             Trending Movies
           </Typography>
           <MovieList
-            movieListChunks={chunkArray(5, trendingMovies)}
+            movieListChunks={chunkArray(4, trendingMovies)}
             imgConfig={imgConfig}
           />
 
@@ -37,7 +37,7 @@ function App() {
             Trending TV
           </Typography>
           <MovieList
-            movieListChunks={chunkArray(5, trendingTvShows)}
+            movieListChunks={chunkArray(4, trendingTvShows)}
             imgConfig={imgConfig}
           />
         </>
