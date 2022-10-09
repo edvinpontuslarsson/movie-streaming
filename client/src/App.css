@@ -24,3 +24,9 @@
 .movie-list-scroll-button-wrap {
   width: 10%;
 }
+
+.movie-poster-link {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
