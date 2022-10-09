@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       {imgConfig && (
         <MovieList
-          movieListChunks={chunkArray(3, trendingMovieItems)}
+          movieListChunks={chunkArray(5, trendingMovieItems)}
           imgConfig={imgConfig}
         />
       )}
