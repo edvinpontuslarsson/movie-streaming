@@ -13,6 +13,13 @@ function App() {
 
   return (
     <div className="App">
+      {imgConfig && (
+        <MovieList
+          movieListChunks={chunkArray(3, trendingMovieItems)}
+          imgConfig={imgConfig}
+        />
+      )}
+
       <div className="button-wrap">
         <button
           className="fetch-button"
@@ -30,13 +37,6 @@ function App() {
           Fetch trending movies
         </button>
       </div>
-
-      {imgConfig && (
-        <MovieList
-          movieListChunks={chunkArray(3, trendingMovieItems)}
-          imgConfig={imgConfig}
-        />
-      )}
     </div>
   );
 }
