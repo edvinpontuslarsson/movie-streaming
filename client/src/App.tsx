@@ -32,7 +32,7 @@ function App() {
 
           <Typography
             variant="h4"
-            style={{ textAlign: 'center', marginTop: 20, marginBottom: 20 }}
+            style={{ textAlign: 'center', marginTop: 40, marginBottom: 20 }}
           >
             Trending TV
           </Typography>
