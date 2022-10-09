@@ -24,18 +24,9 @@
   justify-content: space-between;
 }
 
-.movie-list {
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between; */
-}
-
-.movie-poster-link-wrap {
-  word-wrap: break-word;
-}
-
 .movie-list-scroll-button-wrap {
-  width: 10%;
+  /* width: 10%; */
+  /* align-items: center; */
 }
 
 .movie-poster-more-info {
