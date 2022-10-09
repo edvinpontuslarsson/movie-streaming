@@ -16,10 +16,6 @@ export default function MoviePoster({
   return (
     <Card>
       <CardActionArea>
-        {/* <img
-          src={`${imgConfig.secure_base_url}${imgConfig.poster_sizes[2]}/${movie.poster_path}`}
-          alt={`Poster for movie ${movie.title}`}
-        /> */}
         <CardMedia
           component="img"
           width={width}
