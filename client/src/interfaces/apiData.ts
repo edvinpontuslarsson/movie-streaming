@@ -12,11 +12,11 @@ export interface IImgConfig {
   still_sizes: string[];
 }
 
-export interface ITrendingMovies {
-  results: ITrendingMovieItem[];
+export interface ITrendingMedia {
+  results: ITrendingMediaItem[];
 }
 
-export interface ITrendingMovieItem {
+export interface ITrendingMediaItem {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
