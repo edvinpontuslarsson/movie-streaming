@@ -47,23 +47,25 @@ function App() {
         <button
           className="fetch-button"
           onClick={async () => {
-            const config = await getAPIConfig();
+            try {
+              const config = await getAPIConfig();
 
-            if (config) {
-              setImgConfig(config.images);
+              if (config) {
+                setImgConfig(config.images);
 
-              const trendingMedia = await getTrendingMediaItems();
+                const trendingMedia = await getTrendingMediaItems();
 
-              const movies = trendingMedia.results.filter(
-                (media) => media.media_type === 'movie'
-              );
-              setTrendingMovies(movies);
+                const movies = trendingMedia.results.filter(
+                  (media) => media.media_type === 'movie'
+                );
+                setTrendingMovies(movies);
 
-              const tvShows = trendingMedia.results.filter(
-                (media) => media.media_type === 'tv'
-              );
-              setTrendingTvShows(tvShows);
-            }
+                const tvShows = trendingMedia.results.filter(
+                  (media) => media.media_type === 'tv'
+                );
+                setTrendingTvShows(tvShows);
+              }
+            } catch (error) {}
           }}
         >
           Fetch trending movies
