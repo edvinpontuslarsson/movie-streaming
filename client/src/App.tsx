@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { IImgConfig, ITrendingMovieItem } from './interfaces/apiData';
 import MovieList from './components/MovieList';
 import { chunkArray } from './utils/utils';
+import { Typography } from '@mui/material';
 
 function App() {
   const [imgConfig, setImgConfig] = useState<null | IImgConfig>(null);
@@ -13,6 +14,9 @@ function App() {
 
   return (
     <div className="App">
+      <Typography variant="h3" style={{ textAlign: 'center', margin: '3rem' }}>
+        Trending Movies
+      </Typography>
       {imgConfig && (
         <MovieList
           movieListChunks={chunkArray(5, trendingMovieItems)}
