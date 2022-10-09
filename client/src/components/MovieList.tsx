@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { IconButton } from '@mui/material';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+
 import { IImgConfig, ITrendingMovieItem } from '../interfaces/apiData';
 import MoviePoster from './MoviePoster';
 
@@ -13,27 +16,27 @@ export default function MovieList({
 
   return (
     <div className="movie-section">
-      <div className='movie-list-scroll-button-wrap'>
+      <div className="movie-list-scroll-button-wrap">
         {chunkIndex > 0 && (
-          <button
+          <IconButton
             onClick={() => {
               const newIndex = chunkIndex - 1;
               setChunkIndex(newIndex >= 0 ? newIndex : 0);
             }}
           >
-            Prev
-          </button>
+            <ChevronLeft />
+          </IconButton>
         )}
       </div>
-      <div className='movie-list'>
+      <div className="movie-list">
         {movieListChunks.length > 0 &&
           movieListChunks[chunkIndex].map((item) => (
             <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
           ))}
       </div>
-      <div className='movie-list-scroll-button-wrap'>
+      <div className="movie-list-scroll-button-wrap">
         {chunkIndex !== movieListChunks.length - 1 && (
-          <button
+          <IconButton
             onClick={() => {
               const newIndex = chunkIndex + 1;
               setChunkIndex(
@@ -43,8 +46,8 @@ export default function MovieList({
               );
             }}
           >
-            Next
-          </button>
+            <ChevronRight />
+          </IconButton>
         )}
       </div>
     </div>
