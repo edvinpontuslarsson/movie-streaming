@@ -4,7 +4,7 @@
 
 ### Get Started
 
-Create a file with the file name ".env". Add the following line of text to that file:
+Create a file in the client directory with the file name ".env". Add the following line of text to that file:
 `REACT_APP_MOVIEDB_API_KEY = '<<api_key>>'`
 
 Replace "<<api_key>>" with a valid api key for themoviedb. See the file client/.env.example for an example.
