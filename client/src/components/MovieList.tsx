@@ -16,7 +16,7 @@ export default function MovieList({
 
   return (
     <div className="movie-section">
-      <div className="movie-list-scroll-button-wrap">
+      <div className="movie-list-slide-wrap">
         {chunkIndex > 0 && (
           <IconButton
             onClick={() => {
@@ -32,7 +32,7 @@ export default function MovieList({
         movieListChunks[chunkIndex].map((item) => (
           <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
         ))}
-      <div className="movie-list-scroll-button-wrap">
+      <div className="movie-list-slide-wrap">
         {chunkIndex !== movieListChunks.length - 1 && (
           <IconButton
             onClick={() => {
