@@ -1,13 +1,15 @@
 import './App.css';
 import { getAPIConfig, getTrendingMediaItems } from './api/api';
 import { useEffect, useState } from 'react';
-import { IImgConfig, ITrendingMediaItem } from './interfaces/apiData';
+import { IPosterImageConfig, ITrendingMediaItem } from './interfaces/apiData';
 import MovieList from './components/MovieList';
 import { chunkArray } from './utils/utils';
 import { Typography } from '@mui/material';
 
 function App() {
-  const [imgConfig, setImgConfig] = useState<null | IImgConfig>(null);
+  const [posterImageConfig, setPosterImageConfig] =
+    useState<null | IPosterImageConfig>(null);
+
   const [trendingMovies, setTrendingMovies] = useState(
     [] as ITrendingMediaItem[]
   );
@@ -21,7 +23,7 @@ function App() {
         const config = await getAPIConfig();
 
         if (config) {
-          setImgConfig(config.images);
+          setPosterImageConfig(config.images);
 
           const trendingMedia = await getTrendingMediaItems();
 
@@ -43,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      {imgConfig && (
+      {posterImageConfig && (
         <>
           <Typography
             variant="h4"
@@ -53,7 +55,7 @@ function App() {
           </Typography>
           <MovieList
             movieListChunks={chunkArray(4, trendingMovies)}
-            imgConfig={imgConfig}
+            imgConfig={posterImageConfig}
           />
 
           <Typography
@@ -64,8 +66,9 @@ function App() {
           </Typography>
           <MovieList
             movieListChunks={chunkArray(4, trendingTvShows)}
-            imgConfig={imgConfig}
+            imgConfig={posterImageConfig}
           />
+          <div style={{ height: 100 }} />
         </>
       )}
     </div>

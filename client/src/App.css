@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 
-.movie-list-scroll-button-wrap {
+.movie-list-slide-wrap {
   width: 48px;
   display: flex;
   flex-direction: column;

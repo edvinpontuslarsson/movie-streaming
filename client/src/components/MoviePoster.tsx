@@ -1,14 +1,14 @@
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
-import { ITrendingMediaItem, IImgConfig } from '../interfaces/apiData';
+import { ITrendingMediaItem, IPosterImageConfig } from '../interfaces/apiData';
 
 export default function MoviePoster({
   movie,
   imgConfig,
 }: {
   movie: ITrendingMediaItem;
-  imgConfig: IImgConfig;
+  imgConfig: IPosterImageConfig;
 }) {
   const stringInitialPosterSize = imgConfig.poster_sizes[1].split('w')[1];
   const width = parseInt(stringInitialPosterSize);
