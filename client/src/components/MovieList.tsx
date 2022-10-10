@@ -29,10 +29,12 @@ export default function MovieList({
           </IconButton>
         )}
       </div>
+
       {movieListChunks.length > 0 &&
         movieListChunks[movieChunkIndex].map((item) => (
           <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
         ))}
+        
       <div className="movie-list-slide-wrap">
         {movieChunkIndex !== movieListChunks.length - 1 && (
           <IconButton
