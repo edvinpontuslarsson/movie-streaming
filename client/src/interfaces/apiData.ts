@@ -1,8 +1,8 @@
 export interface IAPIConfig {
-  images: IImgConfig;
+  images: IPosterImageConfig;
 }
 
-export interface IImgConfig {
+export interface IPosterImageConfig {
   backdrop_sizes: string[];
   base_url: string;
   logo_sizes: string[];
