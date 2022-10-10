@@ -68,6 +68,7 @@ function App() {
             movieListChunks={chunkArray(4, trendingTvShows)}
             imgConfig={posterImageConfig}
           />
+          <div style={{ height: 100 }} />
         </>
       )}
     </div>
