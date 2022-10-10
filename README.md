@@ -20,11 +20,11 @@ When finished, the web client will be available on port 3000
 
 http://localhost:3000/
 
-### Run with Docker
+### Build and run with Docker
 
 Be navigated to this root directory in a terminal and enter command:
 
-`docker-compose up`
+`docker-compose up --build`
 
 When finished, the web client will be available on port 3000
 
@@ -34,6 +34,6 @@ http://localhost:3000/
 
 `docker-compose down`
 
-### Rebuild
+### Run with Docker without building
 
-`docker-compose up --build`
+`docker-compose up`
