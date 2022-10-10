@@ -13,6 +13,7 @@ Replace "<<api_key>>" with a valid api key for themoviedb. See the file client/.
 
 ```console
 cd client
+yarn install
 yarn start
 ```
 
