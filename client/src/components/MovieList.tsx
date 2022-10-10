@@ -12,16 +12,17 @@ export default function MovieList({
   movieListChunks: ITrendingMediaItem[][];
   imgConfig: IPosterImageConfig;
 }) {
-  const [chunkIndex, setChunkIndex] = useState(0);
+  const [movieChunkIndex, setMovieChunkIndex] = useState(0);
 
   return (
     <div className="movie-section">
       <div className="movie-list-slide-wrap">
-        {chunkIndex > 0 && (
+        {movieChunkIndex > 0 && (
           <IconButton
             onClick={() => {
-              const newIndex = chunkIndex - 1;
-              setChunkIndex(newIndex >= 0 ? newIndex : 0);
+              // slide back to previous movie posters
+              const newIndex = movieChunkIndex - 1;
+              setMovieChunkIndex(newIndex >= 0 ? newIndex : 0);
             }}
           >
             <ChevronLeft />
@@ -29,15 +30,16 @@ export default function MovieList({
         )}
       </div>
       {movieListChunks.length > 0 &&
-        movieListChunks[chunkIndex].map((item) => (
+        movieListChunks[movieChunkIndex].map((item) => (
           <MoviePoster key={item.id} imgConfig={imgConfig} movie={item} />
         ))}
       <div className="movie-list-slide-wrap">
-        {chunkIndex !== movieListChunks.length - 1 && (
+        {movieChunkIndex !== movieListChunks.length - 1 && (
           <IconButton
             onClick={() => {
-              const newIndex = chunkIndex + 1;
-              setChunkIndex(
+              // slide forward to next movie posters
+              const newIndex = movieChunkIndex + 1;
+              setMovieChunkIndex(
                 newIndex <= movieListChunks.length - 1
                   ? newIndex
                   : movieListChunks.length - 1
