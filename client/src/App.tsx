@@ -17,8 +17,6 @@ function App() {
 
   useEffect(() => {
     async function handleAPIFetch() {
-      console.log('here')
-
       try {
         const config = await getAPIConfig();
 
